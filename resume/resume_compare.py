@@ -6,7 +6,7 @@ import os
 
 client = OpenAI(api_key = os.getenv('OPENAI_API_KEY'))
 
-def compare_resume(resume_text, job_description):
+def compare_resume(resume_text, job_description, role):
     summary_response = client.chat.completions.create(
         model = "gpt-3.5-turbo",
         messages = [
@@ -16,7 +16,7 @@ def compare_resume(resume_text, job_description):
             },
             {
                 "role":"user",
-                "content":f"Suggest improvements on this resume: {resume_text} to better fit this job description: {job_description}. Kepp the improvements technical in nature. Just provide the improvements nothing more."
+                "content":f"Suggest improvements on this resume: {resume_text} to better fit this job description: {job_description} for the role: {role}. Kepp the improvements technical in nature. Just provide the improvements nothing more."
             }
         ]
     )

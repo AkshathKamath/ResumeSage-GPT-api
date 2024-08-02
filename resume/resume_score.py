@@ -6,7 +6,7 @@ import os
 
 client = OpenAI(api_key = os.getenv('OPENAI_API_KEY'))
 
-def score_resume(resume_text, job_description):
+def score_resume(resume_text, job_description, role):
     summary_response = client.chat.completions.create(
         model = "gpt-3.5-turbo",
         messages = [
@@ -16,7 +16,7 @@ def score_resume(resume_text, job_description):
             },
             {
                 "role":"user",
-                "content":f"Score this resume: {resume_text} out of 10 based on how well it fits this job description: {job_description}. Just provide the number nothing more."
+                "content":f"Score this resume: {resume_text} out of 10 based on how well it fits this job description: {job_description} for the role: {role}. Just provide the number nothing more."
             }
         ]
     )
