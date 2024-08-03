@@ -16,7 +16,7 @@ def score_resume(resume_text, job_description, role):
             },
             {
                 "role":"user",
-                "content":f"Score this resume: {resume_text} out of 10 based on how well it fits this job description: {job_description} for the role: {role}. Just provide the number nothing more."
+                "content":f"Score this resume: {resume_text} out of 10 based on how well it fits this job description: {job_description} for the role: {role}. Just provide the number nothing more. No text. Just one number that is the score"
             }
         ]
     )
