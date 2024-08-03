@@ -16,7 +16,7 @@ def convert_to_json(text):
             },
             {
                 "role":"user",
-                "content":f"Convert this numbered list: {text} to a json list. Just return the json nothing else. No need to add indexes or any other text."
+                "content":f"Convert this numbered list: {text} to a json list. Just return the json nothing else. No need to add indexes or any other text. Do not add 'json' or anything in the front"
             }
         ]
     )
