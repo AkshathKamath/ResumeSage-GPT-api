@@ -27,11 +27,12 @@ def summary():
 
 @app.post('/score')
 async def score_compare(request: Request):
-     job_description = await request.json()
-     job_description = job_description["msg"]
+     response = await request.json()
+     job_description = response["jd"]
+     role = response["role"]
      res_text = extract_text_from_pdf(file_path)
-     score = score_resume(res_text, job_description)
-     imp = compare_resume(res_text, job_description)
+     score = score_resume(res_text, job_description, role)
+     imp = compare_resume(res_text, job_description, role)
      imp = convert_to_json(imp)
      return {
           "score":score,
