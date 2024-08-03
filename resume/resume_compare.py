@@ -16,7 +16,7 @@ def compare_resume(resume_text, job_description, role):
             },
             {
                 "role":"user",
-                "content":f"Suggest improvements on this resume: {resume_text} to better fit this job description: {job_description} for the role: {role}. Kepp the improvements technical in nature. Just provide the improvements nothing more."
+                "content":f"Suggest improvements on this resume: {resume_text} to better fit this job description: {job_description} for the role: {role}. Kepp the improvements technical in nature. Just provide the improvements nothing more. Provide them as a numbered list without any headings."
             }
         ]
     )
@@ -34,4 +34,4 @@ def compare_resume(resume_text, job_description, role):
 # Familiarity with cloud architecture patterns and an engineering discipline to produce software with quality
 # """
 
-# print(compare_resume(resume_text, job_description))
+# print(compare_resume(resume_text, job_description, "Backend Engineer"))
